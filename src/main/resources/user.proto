@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+
+option java_package = "org.jadevirek.grpc";
+
+//service
+
+service UserRoute {
+
+  rpc Login(LoginRequest) returns (APIResponse) {}
+
+  rpc Logout(Empty) returns (APIResponse) {}
+
+}
+
+message LoginRequest {
+
+  string userName = 1 ;
+  string userPassword = 2 ;
+
+}
+
+message  APIResponse{
+
+  string responseMessage = 1;
+  string responseStatusCode = 2;
+
+}
+
+message Empty {}
