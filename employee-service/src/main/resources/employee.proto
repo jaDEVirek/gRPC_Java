@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package org.jadevirek;
+
+option java_package = "org.jadevirek.stubs.employee";
+
+
+service EmployeeServices {
+  rpc GetEmployeeDetails(EmployeeRequest) returns (EmployeeResponse);
+}
+
+message EmployeeRequest {
+  int32 id = 1;
+  string name=2;
+}
+
+message EmployeeResponse {
+  int32 id = 1;
+  string name = 2;
+  string designation = 3;
+  Status status = 4;
+}
+
+enum Status {
+    Active=0;
+    Inative=1;
+};
+
